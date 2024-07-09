@@ -1,0 +1,39 @@
+static_library("huikang") {
+    sources = [
+        "huikang.c",
+        "init.c",
+        "oled.c",
+        "//vendor/hqyj/fs_hi3861/common/bsp/src/oled_show_log.c",
+
+        "//device/hisilicon/hispark_pegasus/sdk_liteos/include/hi_io.h",
+        "//device/hisilicon/hispark_pegasus/sdk_liteos/include/hi_gpio.h",
+        "//device/hisilicon/hispark_pegasus/sdk_liteos/include/hi_uart.h",
+        "//device/hisilicon/hispark_pegasus/sdk_liteos/include/hi_time.h",
+        "//device/hisilicon/hispark_pegasus/sdk_liteos/include/hi_stdlib.h",
+        
+
+        # "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_ap3216c.c",
+        # "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_aw2013.c",
+        # "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_ssd1306.c",
+        # "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_ssd1306_bmps.c",
+        # "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_pcf8574.c",
+        "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_key.c",
+
+    
+    ]
+    cflags = [ "-Wno-unused-variable" ]
+    cflags += [ "-Wno-unused-but-set-variable" ]
+    cflags += [ "-Wno-unused-parameter" ]
+    include_dirs = [
+        "//utils/native/lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iot_hardware/peripheral/interfaces/kits",
+        "//device/hisilicon/hispark_pegasus/hi3861_adapter/kal/cmsis",
+        "//foundation/communication/wifi_lite/interfaces/wifiservice",
+        "//vendor/hqyj/fs_hi3861/common/bsp/include",
+        "//third_party/cJSON",
+        # "//vendor/hqyj/fs_hi3861/common/bsp/nfc/ndef",
+        # "//vendor/hqyj/fs_hi3861/common/bsp/nfc/ndef/rtd/",
+        # "//vendor/hqyj/fs_hi3861/common/bsp/nfc"
+    ]
+}
